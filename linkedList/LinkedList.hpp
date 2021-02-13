@@ -2,7 +2,7 @@
 *	@author 
 *	@date 
 *	@file LinkedList.hpp
-*	@brief Implementation file for templated LinkedList class, added this
+*	@brief Implementation file for templated LinkedList class
 */
 
 template <typename T>
