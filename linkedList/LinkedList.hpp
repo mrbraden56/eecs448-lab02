@@ -112,7 +112,11 @@ bool LinkedList<T>::removeBack()
 	/** TODO 
 		Fix this method
 	*/
-
+	if(isEmpty()){
+		return(false);
+	}
+	remove(m_size);
+	isRemoved==true;
 	return(isRemoved);
 }	
 
@@ -132,4 +136,45 @@ bool LinkedList<T>::removeFront()
 	}
 
 	return(isRemoved);
+}
+
+template<typename T>
+void LinkedList<T>::remove(int index)
+{
+  if(index <= 0 || index > m_size) //works
+    {
+        throw(std::runtime_error("Can't remove"));
+    }
+  else if(index==1)
+  {
+    Node<T>* temp=m_front;
+    m_front=temp->getNext();
+    delete temp;
+    m_size--;
+  }
+  else if(index==m_size)
+  {
+    Node<T>* temp = m_front;
+    for(int i = 1; i<m_size-1; i++)
+      {
+          temp = temp->getNext();
+      }
+    Node<T>* temp2 = temp->getNext();
+    temp->setNext(nullptr);
+    delete temp2;
+    m_size--;
+  }
+  else
+  {
+    Node<T>* trav=m_front;
+    Node<T>* temp=nullptr;
+    for(int i=1;i<index-1;i++)
+    {
+      trav=trav->getNext();
+    }
+    temp=trav->getNext();
+    trav->setNext(temp->getNext());
+    delete temp;
+    m_size--;
+  }
 }
