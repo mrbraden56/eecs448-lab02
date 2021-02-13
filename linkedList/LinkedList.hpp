@@ -2,7 +2,7 @@
 *	@author 
 *	@date 
 *	@file LinkedList.hpp
-*	@brief Implementation file for templated LinkedList class
+*	@brief Implementation file for templated LinkedList class, added this
 */
 
 template <typename T>
@@ -13,7 +13,7 @@ LinkedList<T>::LinkedList() : m_front(nullptr), m_size(0)
 
 template <typename T>
 LinkedList<T>::~LinkedList() 
-{
+{c
 	while(!isEmpty())
 	{
 		removeFront();
