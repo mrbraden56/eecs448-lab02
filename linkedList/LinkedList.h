@@ -73,6 +73,7 @@ class LinkedList
 	*   @return intrue if the front element was removed, false if the list is empty.
 	*/	
 	bool removeFront();
+	void remove(int index);
 
 	private:
 	Node<T>* m_front;
